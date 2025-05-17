@@ -81,3 +81,29 @@ The program has been designed to run continuosly to stop at anytime **``ctrl+C``
 ---
 
 ## 💻 Output
+
+![image](https://github.com/rishabhkalia6/Multithreaded-Data-Pipeline-with-Synchronization-C-POSIX-Threads-/blob/main/screenshots/Screenshot%20from%202025-05-17%2011-56-33.png?raw=true)
+
+
+This screenshot shows the real-time terminal output of the **multithreaded producer-consumer pipeline**, implemented in C using POSIX threads, semaphores, and mutex locks.
+
+- Multiple **producer threads** are generating random transaction values and inserting them into a fixed-size circular buffer.
+
+- Concurrently, multiple consumer threads are removing and processing these values.
+
+- The buffer is synchronized using:
+
+  - A mutex lock to ensure exclusive access
+
+  - Two semaphores: **``empty``** (tracks available slots) and **``full**`` (tracks filled slots)
+
+The output clearly shows:
+
+- Which producer inserted which value and at which buffer index
+
+- Which consumer removed a value and from which buffer index
+
+- Continuous activity between producers and consumers, demonstrating proper synchronization and buffer state cycling
+
+This confirms that the data pipeline operates correctly, without race conditions or overflows, showcasing effective multithreading and inter-thread communication.
+
